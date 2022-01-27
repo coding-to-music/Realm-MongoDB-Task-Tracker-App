@@ -1,3 +1,6 @@
+const dotenv = require('dotenv').config()
+var APIKEY = process.env.APIKEY
+
 var axios = require('axios');
 var data = JSON.stringify({
     "collection": "Drudge",
@@ -14,15 +17,17 @@ var config = {
     headers: {
         'Content-Type': 'application/json',
         'Access-Control-Request-Headers': '*',
-        'api-key': '$APIKEY'
+        'api-key': 'APIKEY'
     },
     data : data
 };
             
-axios(config)
-    .then(function (response) {
-        console.log(JSON.stringify(response.data));
-    })
-    .catch(function (error) {
-        console.log(error);
-    });
+// axios(config)
+//     .then(function (response) {
+//         console.log(JSON.stringify(response.data));
+//     })
+//     .catch(function (error) {
+//         console.log(error);
+//     });
+
+console.log(APIKEY);

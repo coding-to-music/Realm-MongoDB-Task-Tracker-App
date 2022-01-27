@@ -4,7 +4,7 @@ https://docs.mongodb.com/realm/tutorial/realm-app/#std-label-tutorial-task-track
 
 https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App
 
-Put your MongoDB Data API key in .env.local
+Put your MongoDB Data API key in .env
 ```java
 APIKEY=<your-api-key>
 ```

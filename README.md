@@ -28,11 +28,13 @@ To begin, you'll need a MongoDB Atlas account. If you've already got an existing
 - Click Sign Up to create your account.
 - Follow the prompts to create an organization and project in your Atlas account. You can use the default suggested names or enter your own.
 
+https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
 atlas-create-project-and-organization.png
 The Atlas UI after creating an organization and project.
 
 When you finish creating your organization and project, you should end up on a screen that prompts you to create an Atlas cluster:
 
+https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
 atlas-create-cluster.png
 The Atlas UI after creating an organization and project.
 
@@ -59,6 +61,7 @@ Once you're logged into your account, Atlas should prompt you to create your fir
 - Click the Create Cluster button at the bottom of the page.
 - After creating your cluster, Atlas should launch the project view for your Atlas account. In this view, you'll see Atlas's progress as it initializes your new cluster:
 
+https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
 atlas-creating-cluster.png
 The Atlas UI after creating an organization and project.
 
@@ -97,10 +100,12 @@ Now that you've got realm-cli installed to your development environment, you'll 
 - Click the Create API Key button.
 - In the Description text box, enter "API Key for the MongoDB Realm CLI".
 
+https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
 atlas-create-api-key.png
 ## Creating an API Key in the Atlas UI.
 In the Project Permissions dropdown, select "Project Owner" and deselect "Project Read Only".
 
+https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
 atlas-api-key-permissions.png
 ## Grant your API Key "Project Owner" permissions.
 (I did not see this as an available option)
@@ -197,6 +202,7 @@ Press ENTER at each prompt to use the default value for your app configuration.
 Press "y", then press ENTER to confirm the values for the app configuration
 You should see the following output if your push command successfully created a new app:
 
+https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
 realm-app-tasktracker.png
 ## Successfully pushed app up
 
@@ -211,6 +217,7 @@ Time estimate: 5 minutes
 
 Now that you've successfully created your application, it's time to explore the provided configuration. You can access your app by navigating to the Realm tab in the Atlas UI. Click on the card representing the tasktracker app to launch the Realm UI for managing the Task Tracker backend.
 
+https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
 tasktracker-realm-ui.png
 ## The Realm UI displays a newly created TaskTracker backend.
 
@@ -218,6 +225,7 @@ Now that we can view the configuration of our app in the Realm UI, we can take a
 
 ## Schema
 
+https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
 tasktracker-schema.png
 ## The Realm UI displays the schema for Task data.
 The Schema section of the Realm UI displays information about the structure of the data stored in our linked Atlas cluster. In this section, you should see a cluster called mongodb-atlas that contains two collections: Task and User. You can navigate to the Schema tab to view the JSON Schema that defines the structure of the data in each collection.
@@ -230,6 +238,7 @@ See also:
 
 ## Authentication
 
+https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
 tasktracker-email-password.png
 ## The Realm UI displays the details of Email/Password authentication in Task Tracker.
 

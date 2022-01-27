@@ -1,11 +1,11 @@
-## Set up the Task Tracker Tutorial Backend
+## Set up the Task Tracker Tutorial Realm Backend
 
 ## Overview
 Before we can implement any client SDK functionality for the Task Tracker, we need to create a backend Realm app to serve SDK requests like authentication and Realm Sync. To make this easier and faster, we've already prepared a backend Realm app configuration for you, complete with functions, triggers, a schema, and the Realm Sync configuration you'll need to connect with one of our front-end tutorial apps.
 
 NOTE
-Tutorial Video
-Watch this video to follow along as we walk through this tutorial!
+- Tutorial Video https://youtu.be/lqo0Yf7lnyg
+- Watch this video to follow along as we walk through this tutorial!
 
 ## To use our pre-made backend, you'll have to:
 
@@ -23,15 +23,19 @@ To begin, you'll need a MongoDB Atlas account. If you've already got an existing
 
 1. Navigate to the MongoDB Atlas login page.
 
-Click Login.
-Either enter a new set of user credentials or click the Sign Up with Google button.
-Click Sign Up to create your account.
-Follow the prompts to create an organization and project in your Atlas account. You can use the default suggested names or enter your own.
+- Click Login.
+- Either enter a new set of user credentials or click the Sign Up with Google button.
+- Click Sign Up to create your account.
+- Follow the prompts to create an organization and project in your Atlas account. You can use the default suggested names or enter your own.
 
+atlas-create-project-and-organization.png
 The Atlas UI after creating an organization and project.
+
 When you finish creating your organization and project, you should end up on a screen that prompts you to create an Atlas cluster:
 
+atlas-create-cluster.png
 The Atlas UI after creating an organization and project.
+
 TIP
 See:
 For additional details on how to create an account, see Create an Atlas Account.
@@ -48,14 +52,16 @@ Next, you'll need an MongoDB Atlas cluster running MongoDB 4.4 or higher. If you
 Log into your MongoDB Atlas account at cloud.mongodb.com.
 Once you're logged into your account, Atlas should prompt you to create your first cluster. In the Shared Clusters category, click Create a Cluster. Alternatively, you can click Build a Cluster from the project view in your Atlas account.
 
-Creating a cluster with the Atlas UI.
-Under Cloud Provider & Region, select AWS and N. Virginia (us-east-1).
-Under Additional Settings, select MongoDB 4.4 (or a higher version) from the Select a Version dropdown.
-Under Cluster Name, enter the name Cluster0 for your new cluster.
-Click the Create Cluster button at the bottom of the page.
-After creating your cluster, Atlas should launch the project view for your Atlas account. In this view, you'll see Atlas's progress as it initializes your new cluster:
+## Creating a cluster with the Atlas UI.
+- Under Cloud Provider & Region, select AWS and N. Virginia (us-east-1).
+- Under Additional Settings, select MongoDB 4.4 (or a higher version) from the Select a Version dropdown.
+- Under Cluster Name, enter the name Cluster0 for your new cluster.
+- Click the Create Cluster button at the bottom of the page.
+- After creating your cluster, Atlas should launch the project view for your Atlas account. In this view, you'll see Atlas's progress as it initializes your new cluster:
 
+atlas-creating-cluster.png
 The Atlas UI after creating an organization and project.
+
 TIP
 See:
 For additional details on how to create a MongoDB Atlas cluster, see Deploy a Free Tier Cluster.
@@ -69,42 +75,54 @@ We're using the Realm CLI because realm-cli allows you to manage your Realm apps
 
 Realm CLI is available on npm. To install it on your system, ensure that you have Node.js installed and then run the following command in your shell:
 
+```java
 npm install -g mongodb-realm-cli
+```
 
 NOTE
 Realm CLI Version Compatibility
 This tutorial is compatible with version 2 of realm-cli. If you already have the CLI installed, check your version to make sure that it's compatible with this tutorial.
 
+```java
 realm-cli --version
+```
 
 ## D. Add an API Key to Your Atlas Project & Log into the Realm CLI
 Time estimate: 5 minutes
 
 Now that you've got realm-cli installed to your development environment, you'll need a way to authenticate using realm-cli. For security reasons, realm-cli only allows login using a programmatic API key, so we'll begin by creating a programmatic API Key that you can use to administrate your new Atlas project:
 
-Click Access Manager at the top of the Atlas UI. Select the Project Access option from the dropdown.
-Navigate to the API Keys tab.
-Click the Create API Key button.
-In the Description text box, enter "API Key for the MongoDB Realm CLI".
+- Click Access Manager at the top of the Atlas UI. Select the Project Access option from the dropdown.
+- Navigate to the API Keys tab.
+- Click the Create API Key button.
+- In the Description text box, enter "API Key for the MongoDB Realm CLI".
 
-Creating an API Key in the Atlas UI.
+atlas-create-api-key.png
+## Creating an API Key in the Atlas UI.
 In the Project Permissions dropdown, select "Project Owner" and deselect "Project Read Only".
 
-Grant your API Key "Project Owner" permissions.
-Click Next.
-Copy your Public API Key and save it somewhere.
-Copy your Private API Key and save it somewhere; after leaving this page, you will no longer be able to view it via the Realm UI.
-Click the Add Access List Entry button.
-Click Use Current IP Address.
-Click Save.
-When you have safely recorded your private API key, click Done to navigate back to the Project Access Manager page.
-Use the following command in your terminal to authenticate with the Realm CLI:
+atlas-api-key-permissions.png
+## Grant your API Key "Project Owner" permissions.
+(I did not see this as an available option)
 
+- Click Next.
+- Copy your Public API Key and save it somewhere.
+- Copy your Private API Key and save it somewhere; after leaving this page, you will no longer be able to view it via the Realm UI.
+- Click the Add Access List Entry button.
+- Click Use Current IP Address.
+- Click Save.
+- When you have safely recorded your private API key, click Done to navigate back to the Project Access Manager page.
+- Use the following command in your terminal to authenticate with the Realm CLI:
+
+```java
 realm-cli login --api-key <public API key> --private-api-key <private API key>
+```
 
 If realm-cli produces output like the following, you have successfully authenticated:
 
+```java
 Successfully logged in
+```
 
 TIP
 See:
@@ -125,6 +143,7 @@ git clone https://github.com/mongodb-university/realm-tutorial-backend.git
 
 You should see output like the following:
 
+```java
 Cloning into 'realm-tutorial-backend'...
 remote: Enumerating objects: 39, done.
 remote: Counting objects: 100% (39/39), done.
@@ -132,6 +151,7 @@ remote: Compressing objects: 100% (31/31), done.
 remote: Total 39 (delta 3), reused 39 (delta 3), pack-reused 0
 Receiving objects: 100% (39/39), 7.25 KiB | 1.81 MiB/s, done.
 Resolving deltas: 100% (3/3), done.
+```
 
 The directory where you ran the above git clone command should now contain another directory called realm-tutorial-backend. We'll use the contents of that directory to create your very own Task Tracker Realm app backend with the Realm CLI.
 
@@ -139,35 +159,46 @@ The directory where you ran the above git clone command should now contain anoth
 ## Realm CLI Version Compatibility
 If you're using version 1 of realm-cli then you will need to use a different branch that contains compatible configuration files:
 
+```java
 git checkout -b final-v1 origin/final-v1
+```
 
 Navigate into the root directory of the realm-tutorial-backend project:
 
+```java
 cd realm-tutorial-backend
+```
 
 Run the push command of realm-cli to create your app.
 
+```java
 realm-cli push
+```
 
 realm-cli may take a few seconds to query your Atlas project, but you should soon see the following output:
 
+```java
 Do you wish to create a new app? [y/n]
+```
 
 Press "y", then press ENTER to confirm your intention to create a new app.
 
 realm-cli will prompt you for the following details:
 
+```java
 App name [tasktracker]:
 App Location
 App Deployment Model
 App Environment
+```
 
 Press ENTER at each prompt to use the default value for your app configuration.
 
 Press "y", then press ENTER to confirm the values for the app configuration
 You should see the following output if your push command successfully created a new app:
 
-Successfully pushed app up
+realm-app-tasktracker.png
+## Successfully pushed app up
 
 You can confirm that your app was created successfully by navigating to the Realm tab in the Atlas UI. You should see a Realm app named tasktracker:
 
@@ -180,10 +211,14 @@ Time estimate: 5 minutes
 
 Now that you've successfully created your application, it's time to explore the provided configuration. You can access your app by navigating to the Realm tab in the Atlas UI. Click on the card representing the tasktracker app to launch the Realm UI for managing the Task Tracker backend.
 
+tasktracker-realm-ui.png
 ## The Realm UI displays a newly created TaskTracker backend.
+
 Now that we can view the configuration of our app in the Realm UI, we can take a look at all of the configuration uploaded from the JSON in realm-tutorial-backend. If you'd rather jump straight into a client SDK guides, you can find the links in the What's Next? section below.
 
 ## Schema
+
+tasktracker-schema.png
 ## The Realm UI displays the schema for Task data.
 The Schema section of the Realm UI displays information about the structure of the data stored in our linked Atlas cluster. In this section, you should see a cluster called mongodb-atlas that contains two collections: Task and User. You can navigate to the Schema tab to view the JSON Schema that defines the structure of the data in each collection.
 
@@ -194,7 +229,10 @@ See also:
 - Schemas
 
 ## Authentication
-The Realm UI displays the details of Email/Password authentication in Task Tracker.
+
+tasktracker-email-password.png
+## The Realm UI displays the details of Email/Password authentication in Task Tracker.
+
 In the Authentication Providers tab of the Authentication section, you'll find information about the different ways that users can log into the Task Tracker app. In the provided Task Tracker configuration, users can only log in via "Email/Password" authentication, which lets users define an email username and a secret password known only to them to access their account in your Realm app.
 
 If you click on the Email/Password entry in the list of authentication providers, you can view the details of Task Tracker's Email/Password authentication configuration. There are a few important fields here:

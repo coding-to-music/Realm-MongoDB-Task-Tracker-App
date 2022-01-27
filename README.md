@@ -225,9 +225,7 @@ Now that we can view the configuration of our app in the Realm UI, we can take a
 
 ## Schema
 
-https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
-tasktracker-schema.png
-## The Realm UI displays the schema for Task data.
+![The Realm UI displays the schema for Task data.](https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/tasktracker-schema.png?raw=true)
 The Schema section of the Realm UI displays information about the structure of the data stored in our linked Atlas cluster. In this section, you should see a cluster called mongodb-atlas that contains two collections: Task and User. You can navigate to the Schema tab to view the JSON Schema that defines the structure of the data in each collection.
 
 While MongoDB's document model allows us to store data in a wide variety of shapes and sizes, Realm Database and Realm Sync require data to follow a set schema. Data that follows this schema synchronizes between the MongoDB Atlas linked data source and devices connected to your Realm app via a client SDK. This schema should match the models defined in client applications, with minor exceptions.

@@ -1,0 +1,25 @@
+{
+  "name": "realm-mongodb-task-tracker-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/issues"
+  },
+  "homepage": "https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App#readme",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "dotenv": "^14.3.2"
+  }
+}

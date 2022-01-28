@@ -154,14 +154,6 @@ Resolving deltas: 100% (3/3), done.
 
 The directory where you ran the above git clone command should now contain another directory called realm-tutorial-backend. We'll use the contents of that directory to create your very own Task Tracker Realm app backend with the Realm CLI.
 
-## IMPORTANT
-## Realm CLI Version Compatibility
-If you're using version 1 of realm-cli then you will need to use a different branch that contains compatible configuration files:
-
-```java
-git checkout -b final-v1 origin/final-v1
-```
-
 Navigate into the root directory of the realm-tutorial-backend project:
 
 ```java
@@ -189,6 +181,31 @@ App name [tasktracker]:
 App Location
 App Deployment Model
 App Environment
+```
+
+My output
+```java
+ealm-cli push
+Determining changes
+The following reflects the proposed changes to your Realm app
+--- realm_config.json
++++ realm_config.json
+@@ -3,6 +3,7 @@
+     "config_version": 20210101,
+     "name": "tasktracker",
+     "location": "US-VA",
+-    "deployment_model": "GLOBAL"
++    "deployment_model": "GLOBAL",
++    "environment": "production"
+ }
+ 
+
+? Please confirm the changes shown above Yes
+Creating draft
+Pushing changes
+Deploying draft
+Deployment complete
+Successfully pushed app up: tasktracker-aubpu
 ```
 
 Press ENTER at each prompt to use the default value for your app configuration.

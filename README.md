@@ -136,7 +136,9 @@ Now that you've got an Atlas account, an Atlas cluster running MongoDB 4.4 or hi
 
 Run the following command to download the pre-made Task Tracker backend configuration:
 
+```java
 git clone https://github.com/mongodb-university/realm-tutorial-backend.git
+```
 
 You should see output like the following:
 
@@ -194,11 +196,14 @@ Press ENTER at each prompt to use the default value for your app configuration.
 Press "y", then press ENTER to confirm the values for the app configuration
 You should see the following output if your push command successfully created a new app:
 
-![Successfully pushed app up](https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/realm-app-tasktracker.png?raw=true)
+```java
+Successfully pushed app up
+```
 
 You can confirm that your app was created successfully by navigating to the Realm tab in the Atlas UI. You should see a Realm app named tasktracker:
 
-## A newly created TaskTracker backend in the Atlas UI.
+![A newly created TaskTracker backend in the Atlas UI.](https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/realm-app-tasktracker.png?raw=true)
+
 TIP
 To understand the purpose of the files in the backend app repo, see Realm Application Configuration.
 
@@ -232,8 +237,8 @@ In the Authentication Providers tab of the Authentication section, you'll find i
 
 If you click on the Email/Password entry in the list of authentication providers, you can view the details of Task Tracker's Email/Password authentication configuration. There are a few important fields here:
 
-User Confirmation Method: we've selected "automatically confirm users" so that users can log in immediately after creating an account. In a production application, you might prefer to "send a confirmation email" so that users can confirm ownership of their email accounts.
-Password Reset Method: we've selected "run a password reset function", but resetFunc doesn't actually implement any logic: it always fails. For a production application, you'd want to implement a function that actually resets the user's password if they forget it.
+- User Confirmation Method: we've selected "automatically confirm users" so that users can log in immediately after creating an account. In a production application, you might prefer to "send a confirmation email" so that users can confirm ownership of their email accounts.
+- Password Reset Method: we've selected "run a password reset function", but resetFunc doesn't actually implement any logic: it always fails. For a production application, you'd want to implement a function that actually resets the user's password if they forget it.
 
 TIP
 See:

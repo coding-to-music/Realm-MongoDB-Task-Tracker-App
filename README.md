@@ -28,15 +28,11 @@ To begin, you'll need a MongoDB Atlas account. If you've already got an existing
 - Click Sign Up to create your account.
 - Follow the prompts to create an organization and project in your Atlas account. You can use the default suggested names or enter your own.
 
-https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
-atlas-create-project-and-organization.png
-The Atlas UI after creating an organization and project.
+![The Atlas UI after creating an organization and project.](https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-create-project-and-organization.png?raw=true)
 
 When you finish creating your organization and project, you should end up on a screen that prompts you to create an Atlas cluster:
 
-https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
-atlas-create-cluster.png
-The Atlas UI after creating an organization and project.
+![The Atlas UI after creating an organization and project.](https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-create-cluster.png?raw=true)
 
 TIP
 See:
@@ -61,9 +57,7 @@ Once you're logged into your account, Atlas should prompt you to create your fir
 - Click the Create Cluster button at the bottom of the page.
 - After creating your cluster, Atlas should launch the project view for your Atlas account. In this view, you'll see Atlas's progress as it initializes your new cluster:
 
-https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
-atlas-creating-cluster.png
-The Atlas UI after creating an organization and project.
+![The Atlas UI after creating an organization and project.](https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-creating-cluster.png?raw=true)
 
 TIP
 See:
@@ -100,14 +94,12 @@ Now that you've got realm-cli installed to your development environment, you'll 
 - Click the Create API Key button.
 - In the Description text box, enter "API Key for the MongoDB Realm CLI".
 
-https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
-atlas-create-api-key.png
-## Creating an API Key in the Atlas UI.
+![Creating an API Key in the Atlas UI](https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-create-api-key.png?raw=true)
+
 In the Project Permissions dropdown, select "Project Owner" and deselect "Project Read Only".
 
-https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
-atlas-api-key-permissions.png
-## Grant your API Key "Project Owner" permissions.
+![Grant your API Key "Project Owner" permissions.](https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true)
+
 (I did not see this as an available option)
 
 - Click Next.
@@ -202,9 +194,7 @@ Press ENTER at each prompt to use the default value for your app configuration.
 Press "y", then press ENTER to confirm the values for the app configuration
 You should see the following output if your push command successfully created a new app:
 
-https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
-realm-app-tasktracker.png
-## Successfully pushed app up
+![Successfully pushed app up](https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/realm-app-tasktracker.png?raw=true)
 
 You can confirm that your app was created successfully by navigating to the Realm tab in the Atlas UI. You should see a Realm app named tasktracker:
 
@@ -217,15 +207,14 @@ Time estimate: 5 minutes
 
 Now that you've successfully created your application, it's time to explore the provided configuration. You can access your app by navigating to the Realm tab in the Atlas UI. Click on the card representing the tasktracker app to launch the Realm UI for managing the Task Tracker backend.
 
-https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
-tasktracker-realm-ui.png
-## The Realm UI displays a newly created TaskTracker backend.
+![The Realm UI displays a newly created TaskTracker backend.](https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/tasktracker-realm-ui.png?raw=true)
 
 Now that we can view the configuration of our app in the Realm UI, we can take a look at all of the configuration uploaded from the JSON in realm-tutorial-backend. If you'd rather jump straight into a client SDK guides, you can find the links in the What's Next? section below.
 
 ## Schema
 
 ![The Realm UI displays the schema for Task data.](https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/tasktracker-schema.png?raw=true)
+
 The Schema section of the Realm UI displays information about the structure of the data stored in our linked Atlas cluster. In this section, you should see a cluster called mongodb-atlas that contains two collections: Task and User. You can navigate to the Schema tab to view the JSON Schema that defines the structure of the data in each collection.
 
 While MongoDB's document model allows us to store data in a wide variety of shapes and sizes, Realm Database and Realm Sync require data to follow a set schema. Data that follows this schema synchronizes between the MongoDB Atlas linked data source and devices connected to your Realm app via a client SDK. This schema should match the models defined in client applications, with minor exceptions.
@@ -236,9 +225,8 @@ See also:
 
 ## Authentication
 
-https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/atlas-api-key-permissions.png?raw=true
-tasktracker-email-password.png
-## The Realm UI displays the details of Email/Password authentication in Task Tracker.
+![The Realm UI displays the details of Email/Password authentication in Task Tracker.](https://github.com/coding-to-music/Realm-MongoDB-Task-Tracker-App/blob/main/images/tasktracker-email-password.png?raw=true)
+
 
 In the Authentication Providers tab of the Authentication section, you'll find information about the different ways that users can log into the Task Tracker app. In the provided Task Tracker configuration, users can only log in via "Email/Password" authentication, which lets users define an email username and a secret password known only to them to access their account in your Realm app.
 

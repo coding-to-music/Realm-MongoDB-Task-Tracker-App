@@ -1,5 +1,11 @@
 ## Set up the Task Tracker Tutorial Realm Backend
 
+https://www.youtube.com/watch?v=lqo0Yf7lnyg&ab_channel=MongoDB
+
+https://docs.mongodb.com/realm/tutorial/
+
+https://docs.mongodb.com/realm/tutorial/realm-app/
+
 ## Overview
 Before we can implement any client SDK functionality for the Task Tracker, we need to create a backend Realm app to serve SDK requests like authentication and Realm Sync. To make this easier and faster, we've already prepared a backend Realm app configuration for you, complete with functions, triggers, a schema, and the Realm Sync configuration you'll need to connect with one of our front-end tutorial apps.
 
